@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Post Size Calculator 2026 - Free 1080x1080, 1080x1350 Size</title>
+<meta name="description" content="Free Instagram Post Size Calculator. Get perfect size for Square (1080x1080), Portrait (1080x1350) and Landscape (1080x566) posts. No blur, no crop.">
+<link rel="canonical" href="https://sizecalchub.pages.dev/instagram-post-size-calculator.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Instagram Post Size Calculator","applicationCategory":"DesignApplication","offers":{"@type":"Offer","price":"0"}}
+</script>
+<style>
+body{font-family:Arial,sans-serif;max-width:700px;margin:auto;padding:15px;background:#f9f9f9;color:#222;line-height:1.6}
+nav{background:#fff;padding:12px;border-radius:10px;text-align:center;box-shadow:0 2px 8px #0001}
+nav a{margin:0 8px;color:#d62976;text-decoration:none;font-weight:bold;font-size:14px}
+.box{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 10px #0001;margin-top:15px}
+h1{font-size:26px} h2{font-size:20px;margin-top:25px}
+label{font-weight:bold;display:block;margin-top:12px}
+select,input{width:100%;padding:12px;margin-top:5px;border:1px solid #ddd;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{width:100%;padding:14px;background:#d62976;color:#fff;border:none;border-radius:8px;font-size:18px;font-weight:bold;margin-top:18px;cursor:pointer}
+button:hover{background:#a81e5c}
+#out{background:#fdf2f7;padding:15px;border-radius:10px;margin-top:15px;font-size:18px;display:none}
+.links a{display:inline-block;background:#eee;padding:8px 12px;border-radius:20px;margin:5px 5px 0 0;text-decoration:none;color:#333;font-size:13px}
+footer{text-align:center;font-size:13px;color:#777;margin-top:20px}
+footer a{color:#777;margin:0 5px}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/aspect-ratio-calculator.html">Aspect Ratio</a>
+<a href="/image-size-calculator.html">Image Size</a>
+<a href="/wallpaper-size-calculator.html">Wallpaper</a>
+<a href="/tdee-calculator.html">TDEE</a>
+</nav>
+
+<div class="box">
+<h1>Instagram Post Size Calculator</h1>
+<p>Apni photo ka sahi size maloom karein taake Instagram usko crop ya blur na kare. Neeche apni post ka type select karein aur width likhein.</p>
+
+<label>1. Post Type Select Karein:</label>
+<select id="type">
+<option value="square">Square Post - 1:1 (Best for Feed)</option>
+<option value="portrait">Portrait Post - 4:5 (Sab se zyada space)</option>
+<option value="landscape">Landscape Post - 1.91:1</option>
+</select>
+
+<label>2. Apni Width (Pixels me) Likhein:</label>
+<input type="number" id="width" value="1080" placeholder="e.g. 1080">
+
+<button onclick="calc()">Calculate Perfect Size</button>
+
+<div id="out"></div>
+
+<h2>Instagram Post Sizes 2026 - Quick Guide</h2>
+<p><b>1. Square Post:</b> 1080 x 1080 pixels. Ye classic size hai, sab se safe hai.</p>
+<p><b>2. Portrait Post:</b> 1080 x 1350 pixels. Ye feed me sab se zyada jagah leta hai, is liye zyada log dekhte hain.</p>
+<p><b>3. Landscape Post:</b> 1080 x 566 pixels. Wide photos ke liye best hai.</p>
+<p><b>Pro Tip:</b> Hamesha 1080 pixels width rakhein. Is se kam photo blur ho jati hai, is se zyada Instagram khud compress kar deta hai.</p>
+
+<h2>Related Calculators</h2>
+<div class="links">
+<a href="/instagram-post-size-calculator.html">Instagram Post Size</a>
+<a href="/image-size-calculator.html">Image Size Calculator</a>
+<a href="/aspect-ratio-calculator.html">Aspect Ratio Calculator</a>
+<a href="/wallpaper-size-calculator.html">Wallpaper Size Calculator</a>
+<a href="/tdee-calculator.html">TDEE Calculator</a>
+</div>
+
+</div>
+
+<footer>
+<a href="/">Home</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a> | <a href="/privacy-policy.html">Privacy Policy</a><br>© 2026 SizeCalcHub
+</footer>
+
+<script>
+function calc(){
+let type=document.getElementById('type').value;
+let w=parseFloat(document.getElementById('width').value);
+if(!w){alert("Please width likhein");return;}
+let h=0, label="";
+if(type==='square'){h=w; label="Square Post (1:1)";}
+if(type==='portrait'){h=Math.round(w*1.25); label="Portrait Post (4:5)";}
+if(type==='landscape'){h=Math.round(w/1.91); label="Landscape Post (1.91:1)";}
+let out=document.getElementById('out');
+out.style.display='block';
+out.innerHTML="<b>"+label+"</b><br>Perfect Size: <b>"+w+" x "+h+" pixels</b><br>Recommended: 1080 x "+(type==='square'?1080:type==='portrait'?1350:566)+" pixels for best quality";
+}
+</script>
+</body>
+</html>
