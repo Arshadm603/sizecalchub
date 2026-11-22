@@ -32,6 +32,12 @@ a{display:block;text-align:center;margin-top:20px;color:#2563eb}
 <option value="1.725">Very Active</option>
 <option value="1.9">Extra Active</option>
 </select>
+  <label>Your Goal</label>
+<select id="goal">
+<option value="maintain">Maintain Weight</option>
+<option value="lose">Lose Weight</option>
+<option value="gain">Gain Weight</option>
+</select>
 <button onclick="calc()">Calculate TDEE</button>
 <div class="result" id="out">Enter details and click Calculate</div>
 <a href="index.html">← Back to Home</a>
@@ -45,7 +51,11 @@ let g=document.getElementById('gender').value;
 let act=+document.getElementById('activity').value;
 let bmr = g=='male' ? (10*w+6.25*h-5*a+5) : (10*w+6.25*h-5*a-161);
 let tdee = Math.round(bmr*act);
-document.getElementById('out').innerHTML = "<b>Your BMR: "+Math.round(bmr)+" calories</b><br><b>Your TDEE: "+tdee+" calories/day</b><br><br>For Weight Loss: "+(tdee-500)+" cal<br>For Maintenance: "+tdee+" cal<br>For Weight Gain: "+(tdee+500)+" cal";
+  let goal = document.getElementById('goal').value;
+let goalCalories = tdee;
+if (goal === 'lose') goalCalories = tdee - 500;
+if (goal === 'gain') goalCalories = tdee + 500;
+document.getElementById('out').innerHTML = "<b>Your BMR: "+Math.round(bmr)+" calories</b><br><b>Your TDEE: "+tdee+" calories/day</b><br><br>For Weight Loss: "+(tdee-500)+" cal<br>For Maintenance: "+tdee+" cal<br>For Weight Gain: "+(tdee+500)+" cal"+ "<br>Goal Calories: " + goalCalories + " calories"
 }
 </script>
 </body>
